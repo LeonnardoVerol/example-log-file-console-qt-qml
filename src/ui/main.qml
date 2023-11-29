@@ -44,30 +44,26 @@ ApplicationWindow {
 
         Button {
             text: "Add Debug Log"
-            padding: 25
 
             onClicked: console.log("New Debug Log")
         }
 
         Button {
             text: "Add Info Log"
-            padding: 25
 
             onClicked: console.info("New Info Log")
         }
 
         Button {
             text: "Add Warn Log"
-            padding: 25
 
             onClicked: console.warn("New Warn Log")
         }
 
         Button {
-            text: "Add Error Log"
-            padding: 25
+            text: "Add Critical Log"
 
-            onClicked: console.error("New Error Log")
+            onClicked: console.error("New Critical Log")
         }
     }
 }

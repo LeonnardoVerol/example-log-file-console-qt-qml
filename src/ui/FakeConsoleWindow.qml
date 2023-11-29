@@ -38,7 +38,7 @@ ApplicationWindow {
                     myListModel.append({text: line});
 
                     // Auto-scroll To Bottom if ScrollBar at the End
-                    if (myScrollView.contentHeight - myListView.contentY <= 1000)
+                    if (myListView.atYEnd)
                         myListView.positionViewAtEnd();
                 }
             }
