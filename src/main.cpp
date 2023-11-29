@@ -51,6 +51,15 @@ int main(int argc, char *argv[])
             if (!obj && url == objUrl)
                 QCoreApplication::exit(-1);
         }, Qt::QueuedConnection);
+
+    // Depending on what you do inside your MessageHandler, it might be easier/better to reset it on close
+    QObject::connect(
+        &app, &QGuiApplication::aboutToQuit,
+        &app, []()
+        {
+            qInstallMessageHandler(0);
+        });
+    
     engine.load(url);
 
     return app.exec();
